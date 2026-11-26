@@ -1,0 +1,212 @@
+{
+  "meta": {
+    "title": "Lluna Plena Flors · Floristeria a Vilanova i la Geltrú",
+    "description": "Floristeria al carrer de l'Aigua, 38, Vilanova i la Geltrú. Rams de temporada, decoració floral de boda, corones de dol i entrega a domicili. Truqueu al 938 14 26 35.",
+    "ogAlt": "Flors de temporada i rams fets a mà a la floristeria Lluna Plena Flors de Vilanova i la Geltrú"
+  },
+  "ogLocale": "ca_ES",
+  "pathPrefix": "./",
+  "countryName": "Espanya",
+  "brand": {
+    "sub": "Floristeria · Vilanova i la Geltrú"
+  },
+  "nav": {
+    "label": "Navegació principal",
+    "skip": "Vés al contingut",
+    "occasions": "Ocasions",
+    "shop": "La botiga",
+    "how": "Com encarregar",
+    "reviews": "Ressenyes",
+    "contact": "Contacte",
+    "call": "Trucar"
+  },
+  "hero": {
+    "eyebrow": "Carrer de l'Aigua, 38 · Vilanova i la Geltrú",
+    "title": "Flors fresques, lligades a mà, al cor de Vilanova",
+    "subtitle": "Rams de temporada, decoració de boda i corones de dol. Cada ram es munta a mà amb flor fresca, i us diem què hi posem i què costarà abans de començar.",
+    "ctaPrimary": "Truqueu per encarregar",
+    "ctaSecondary": "Veure per a quina ocasió",
+    "proofReviews": "ressenyes a Google",
+    "proofLink": "Llegir-les",
+    "photoAlt": "Aparador de Lluna Plena Flors amb rams i composicions de flor natural",
+    "photoCredit": "Foto",
+    "stripPhoneLabel": "Encarregueu per telèfon",
+    "stripShopLabel": "Botiga oberta al carrer de l'Aigua",
+    "stripAreaLabel": "Repartiment",
+    "stripAreaValue": "Vilanova i la Geltrú"
+  },
+  "about": {
+    "eyebrow": "La botiga",
+    "title": "Una floristeria de barri que fa bodes",
+    "lead": "Lluna Plena Flors és una botiga petita on la flor es tria a mà cada setmana i les comandes es parlen una a una. Carmen i l'equip fan des del ram de dimarts fins a l'arc sencer d'una cerimònia.",
+    "body1": "Treballen amb flor de temporada i amb el que el mercat té millor aquell dia, per això el catàleg no és una llista tancada de productes: és una manera de treballar. Si teniu una idea, una foto o només un color al cap, us diem què es pot fer amb la flor d'aquesta setmana i quant costarà abans de començar.",
+    "body2": "Les bodes són bona part de la feina: rams de núvia, arcs, centres de taula i tota la decoració floral de la cerimònia i del convit. També fan rams de dol i corones, que és una feina on el temps mana i que atenen el mateix dia sempre que poden.",
+    "statRatingLabel": "Valoració mitjana",
+    "statRating": "sobre 5 a Google",
+    "statReviewsLabel": "Ressenyes",
+    "statReviews": "de clients reals",
+    "statPlaceLabel": "On som",
+    "statPlace": "centre de la ciutat",
+    "statSpecialtyLabel": "Especialitat",
+    "statSpecialtyValue": "Bodes",
+    "statSpecialty": "decoració floral completa",
+    "pull": "Tot el que vam imaginar i més. Ens va guiar sempre respectant el nostre gust.",
+    "pullAuthor": "Rocío G., decoració de boda"
+  },
+  "menu": {
+    "title": "Què hi trobareu",
+    "lead": "No treballem amb un catàleg tancat: això és el que surt de la botiga gairebé cada setmana.",
+    "items": {
+      "bouquet": {
+        "title": "Ram de temporada",
+        "text": "Lligat a mà amb la flor que hi ha aquell dia. Digueu el color o el pressupost i el muntem."
+      },
+      "arrangement": {
+        "title": "Composició per a casa",
+        "text": "Per a un menjador, una consulta o un aparador. En cistella, en gerro o amb escorça."
+      },
+      "centrepiece": {
+        "title": "Centre de taula",
+        "text": "Per a un dinar, un convit o una celebració familiar. Es munta amb la flor del dia i el gerro que volgueu."
+      },
+      "wedding": {
+        "title": "Ram de núvia i botoners",
+        "text": "Es dissenya amb vosaltres mesos abans, a partir de fotos o d'una conversa sobre colors i estil."
+      },
+      "funeral": {
+        "title": "Corona i ram de dol",
+        "text": "Feina urgent, atesa el mateix dia quan és possible. Truqueu i ho resolem."
+      },
+      "gift": {
+        "title": "Detall i regal petit",
+        "text": "Per a un aniversari, una visita a l'hospital o un gràcies, sense haver de fer un ram sencer."
+      }
+    }
+  },
+  "order": {
+    "eyebrow": "Com encarregar",
+    "title": "Tres passes i ho teniu",
+    "lead": "No hi ha formulari ni carret de la compra: es parla per telèfon o es ve a la botiga, i així el ram surt com el voleu.",
+    "step1Title": "Truqueu o passeu",
+    "step1Text": "Ens dieu l'ocasió, el color i el pressupost. Si teniu una foto de referència, millor.",
+    "step2Title": "Us confirmem flor i preu",
+    "step2Text": "Us diem què es pot fer amb la flor d'aquesta setmana i tanquem el preu abans de muntar res.",
+    "step3Title": "Recolliu o us ho portem",
+    "step3Text": "Ho podeu recollir a la botiga o us ho entreguem a Vilanova i als pobles del voltant.",
+    "areaTitle": "Zona de repartiment",
+    "areaText": "El repartiment segur és Vilanova i la Geltrú. Per als pobles del Garraf i el Penedès no prometem res per endavant: truqueu-nos i us diem si hi podem arribar aquell dia.",
+    "areas": [
+      "Vilanova i la Geltrú — el nucli del repartiment",
+      "La Geltrú",
+      "Pobles del Garraf i el Penedès — pregunteu-nos"
+    ],
+    "deliveryTitle": "Entrega",
+    "deliveryText": "Les comandes es fan per telèfon o a la botiga. Per a una entrega el mateix dia, truqueu com més aviat millor al matí: la flor s'ha de poder muntar i sortir.",
+    "deliveryCta": "Per encarregar, truqueu al"
+  },
+  "features": {
+    "eyebrow": "Per a quina ocasió",
+    "title": "Del ram de cada dia a la boda sencera",
+    "lead": "La mateixa botiga fa un ram petit i la decoració completa d'un convit. Trieu la vostra ocasió.",
+    "items": {
+      "weddings": {
+        "title": "Bodes",
+        "text": "Ram de núvia, botoners, arc, centres de taula i tota la flor de la cerimònia i del convit. Es dissenya mesos abans i es munta el mateix dia."
+      },
+      "funerals": {
+        "title": "Dol i comiats",
+        "text": "Corones, rams i centres per a vetlla i enterrament. És una feina urgent i l'atenem el mateix dia sempre que podem."
+      },
+      "birthdays": {
+        "title": "Aniversaris i celebracions",
+        "text": "Rams d'aniversari, de felicitació i detalls per a qui fa anys. Digueu el color i el pressupost i ho lliguem."
+      },
+      "seasonal": {
+        "title": "Temporada i festes",
+        "text": "Sant Jordi, Tots Sants, Nadal i Rams: la botiga canvia amb el calendari i amb la flor que hi ha al mercat."
+      },
+      "events": {
+        "title": "Esdeveniments i empreses",
+        "text": "Inauguracions, presentacions, restaurants i hotels que volen flor fresca cada setmana."
+      },
+      "care": {
+        "title": "Consell i cura",
+        "text": "Us expliquem com tallar la tija, quanta aigua posar i on no posar el gerro perquè us duri més."
+      }
+    }
+  },
+  "reviews": {
+    "eyebrow": "Què diuen",
+    "title": "Bodes fetes des de fora, i sortides bé",
+    "lead": "Bona part de les ressenyes són de parelles que van encarregar la flor des de l'estranger i la van veure per primer cop el dia de la boda. Aquestes són les seves paraules.",
+    "starsLabel": "{n} de 5 estrelles",
+    "reviewsWord": "ressenyes",
+    "onGoogle": "a Google",
+    "readAll": "Llegir totes les ressenyes a Google",
+    "items": {
+      "emma": {
+        "text": "Van fer tota la decoració floral i els rams de la meva boda de l'abril de 2025. Ho vaig organitzar des dels Estats Units i, sense haver vist cap disseny abans, va sortir perfecte.",
+        "author": "Emma Oakley",
+        "meta": "Boda · fa un any",
+        "stars": 5
+      },
+      "rachel": {
+        "text": "Em van fer la flor de la boda de l'abril de 2023. Ho vaig planificar des del Regne Unit i només vaig enviar fotos d'exemple. Vaig veure les flors per primer cop el dia de la boda i em vaig quedar sense paraules.",
+        "author": "Rachel Esfahani",
+        "meta": "Boda · fa 3 anys",
+        "stars": 5
+      },
+      "dana": {
+        "text": "Ens van fer la flor d'una boda íntima i va quedar preciosa. Els vaig enviar fotos d'inspiració de Pinterest i van aconseguir exactament el que havia imaginat, potser fins i tot millor. Un equip molt amable i professional.",
+        "author": "Dana Jones",
+        "meta": "Boda · fa 4 anys",
+        "stars": 5
+      },
+      "rocio": {
+        "text": "La Carmen es va encarregar de tota la decoració floral de la meva boda, amb un gust excel·lent i molt de respecte per la nostra personalitat. Es va desplaçar a diferents llocs per portar cada cosa on tocava i va estar atenta a cada comentari durant mesos.",
+        "author": "Rocío González",
+        "meta": "Boda · fa un mes",
+        "stars": 5
+      },
+      "imma": {
+        "text": "Un lloc encantador i gent molt agradable. Els vaig confiar dues composicions florals i vaig sortir encantada.",
+        "author": "Imma Espejo",
+        "meta": "Composició floral · fa 4 mesos",
+        "stars": 5
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Contacte",
+    "title": "Truqueu i parlem del ram",
+    "lead": "És la manera més ràpida: al telèfon us diem què hi ha, què costa i quan ho podeu tenir. Si passeu per la botiga, millor encara.",
+    "ctaLabel": "Truqueu a la botiga",
+    "callNote": "Si no contestem és que estem muntant un ram: deixeu un missatge o torneu a trucar d'aquí a una estona.",
+    "addressLabel": "Adreça",
+    "listingLabel": "Fitxa i ressenyes",
+    "listingValue": "Veure'ns a Google Maps",
+    "plusCodeLabel": "Codi Plus",
+    "mapNote": "El mapa de Google només es carrega si accepteu les galetes.",
+    "mapLoad": "Carregar el mapa",
+    "mapTitle": "Mapa amb la ubicació de Lluna Plena Flors"
+  },
+  "footer": {
+    "tagline": "Floristeria al carrer de l'Aigua, 38. Rams, bodes, dol i planta, fets a mà a Vilanova i la Geltrú.",
+    "navTitle": "La botiga",
+    "contactTitle": "Contacte",
+    "legalTitle": "Informació",
+    "siteLink": "Fitxa a Google Maps",
+    "legal": "Lluna Plena Flors, Carrer de l'Aigua, 38, 08800 Vilanova i la Geltrú (Barcelona). Les fotografies són orientatives: la flor canvia segons la temporada i el mercat.",
+    "rights": "Tots els drets reservats."
+  },
+  "cookies": {
+    "policy": "Galetes",
+    "text": "Fem servir galetes pròpies per recordar la vostra tria i, només si les accepteu, galetes de Google Analytics per saber quines pàgines es visiten. Podeu continuar amb les essencials.",
+    "accept": "Acceptar",
+    "reject": "Només essencials"
+  },
+  "a11y": {
+    "langSwitch": "Canvi d'idioma",
+    "menuToggle": "Obrir o tancar el menú"
+  }
+}

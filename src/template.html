@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="{{meta.lang}}" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{meta.title}}</title>
+<meta name="description" content="{{meta.description}}">
+<meta name="author" content="{{business.name}}">
+<meta name="theme-color" content="#12211a">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="{{site.url}}/{{meta.canonicalPath}}">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{business.name}}">
+<meta property="og:title" content="{{meta.title}}">
+<meta property="og:description" content="{{meta.description}}">
+<meta property="og:locale" content="{{meta.ogLocale}}">
+<meta property="og:url" content="{{site.url}}/{{meta.canonicalPath}}">
+<meta property="og:image" content="{{site.url}}/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{t.meta.ogAlt}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{meta.title}}">
+<meta name="twitter:description" content="{{meta.description}}">
+<meta name="twitter:image" content="{{site.url}}/assets/img/og-image.jpg">
+
+{{#each alternates}}
+<link rel="alternate" hreflang="{{this.hreflang}}" href="{{@root.site.url}}/{{this.path}}">
+{{/each}}
+
+<link rel="icon" href="{{meta.assetBase}}assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{meta.assetBase}}assets/img/apple-touch-icon.png">
+<link rel="manifest" href="{{meta.assetBase}}site.webmanifest">
+<link rel="preload" href="{{meta.assetBase}}assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{meta.assetBase}}assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{meta.assetBase}}assets/css/styles.css">
+<script>
+  /* Google Analytics 4 with consent mode. Goes in <head> of every generated page,
+     before any other script. Nothing is fetched from Google until the visitor
+     accepts, and storage stays denied by default even if the tag loads elsewhere. */
+  (function () {
+    var ID = 'G-71LT2Q093H';
+    var KEY = 'cookie-consent-v1';
+    var accepted = false;
+    try { accepted = localStorage.getItem(KEY) === 'accepted'; } catch (e) {}
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    gtag('js', new Date());
+
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied'
+    });
+
+    function load() {
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID;
+      document.head.appendChild(s);
+      gtag('config', ID);
+    }
+
+    function grant() {
+      load();
+      gtag('consent', 'update', {
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted',
+        analytics_storage: 'granted'
+      });
+    }
+
+    /* The cookie banner calls this from BOTH buttons; nothing touches Google before it runs. */
+    window.__analyticsConsent = function (isAccepted) {
+      try { localStorage.setItem(KEY, isAccepted ? 'accepted' : 'essential'); } catch (e) {}
+      if (isAccepted) grant();
+    };
+
+    if (accepted) grant();
+  })();
+</script>
+<script type="application/ld+json">
+{{{jsonLd}}}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">{{t.nav.skip}}</a>
+
+<div class="topbar">
+  <div class="wrap topbar__inner">
+    <p class="topbar__note">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      {{business.street}} · {{business.city}}
+    </p>
+    <nav class="langs" aria-label="{{t.a11y.langSwitch}}">
+      {{#each langs}}
+      <a class="langs__link" href="{{this.href}}" hreflang="{{this.code}}" lang="{{this.code}}"{{#if this.current}} aria-current="true"{{/if}}>
+        <span class="langs__flag" aria-hidden="true">{{{this.flag}}}</span>
+        <span class="langs__code">{{this.code}}</span>
+        <span class="sr-only">{{this.name}}</span>
+      </a>
+      {{/each}}
+    </nav>
+  </div>
+</div>
+
+<header class="header">
+  <div class="wrap header__inner">
+    <a class="brand" href="{{meta.assetBase}}" aria-label="{{business.name}} — {{business.city}}">
+      <svg class="brand__mark" viewBox="0 0 40 40" width="38" height="38" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#1e3a2c"/>
+        <g fill="#c9a227">
+          <ellipse cx="20" cy="13.6" rx="3.5" ry="5.2"/>
+          <ellipse cx="20" cy="26.4" rx="3.5" ry="5.2"/>
+          <ellipse cx="13.6" cy="20" rx="5.2" ry="3.5"/>
+          <ellipse cx="26.4" cy="20" rx="5.2" ry="3.5"/>
+        </g>
+        <circle cx="20" cy="20" r="3.4" fill="#f4c95d"/>
+        <circle cx="20" cy="20" r="1.5" fill="#1e3a2c"/>
+      </svg>
+      <span class="brand__text">
+        <span class="brand__name">{{business.name}}</span>
+        <span class="brand__sub">{{t.brand.sub}}</span>
+      </span>
+    </a>
+    <nav class="nav" id="site-nav" data-open="false" aria-label="{{t.nav.label}}">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="#ocasions">{{t.nav.occasions}}</a></li>
+        <li><a class="nav__link" href="#botiga">{{t.nav.shop}}</a></li>
+        <li><a class="nav__link" href="#comanda">{{t.nav.how}}</a></li>
+        <li><a class="nav__link" href="#ressenyes">{{t.nav.reviews}}</a></li>
+        <li><a class="nav__link" href="#contacte">{{t.nav.contact}}</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--primary header__cta" href="tel:{{business.phoneE164}}">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2.1Z"/></svg>
+      {{t.nav.call}}
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="{{t.a11y.menuToggle}}">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO — product-led: the flowers take the space, the phone number takes the action -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow hero__eyebrow">{{t.hero.eyebrow}}</p>
+        <h1 class="hero__title" id="hero-title">{{t.hero.title}}</h1>
+        <p class="hero__subtitle">{{t.hero.subtitle}}</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="tel:{{business.phoneE164}}">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2.1Z"/></svg>
+            {{t.hero.ctaPrimary}}
+          </a>
+          <a class="btn btn--light" href="#ocasions">
+            {{t.hero.ctaSecondary}}
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+          </a>
+        </div>
+        {{#if business.rating}}
+        <p class="hero__proof">
+          <span class="hero__proofStar" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.6l2.9 5.9 6.5.95-4.7 4.6 1.1 6.45L12 17.4l-5.8 3.1 1.1-6.45-4.7-4.6 6.5-.95L12 2.6Z"/></svg>
+          </span>
+          <b>{{business.ratingFormatted}}</b>
+          {{#if business.showRatingCount}}<span>· {{business.ratingCount}} {{t.hero.proofReviews}}</span>{{/if}}
+          <a href="{{links.reviews}}" target="_blank" rel="noopener">{{t.hero.proofLink}}</a>
+        </p>
+        {{/if}}
+      </div>
+
+      <div class="hero__aside">
+        {{#if heroPhoto}}
+        <figure class="hero__photo">
+          <img src="{{meta.assetBase}}{{heroPhoto.src}}" alt="{{t.hero.photoAlt}}" width="788" height="549" fetchpriority="high" decoding="async">
+          {{#if heroPhoto.credit}}
+          <figcaption data-photo-credit>
+            {{t.hero.photoCredit}}:
+            {{#if heroPhoto.creditUrl}}<a href="{{heroPhoto.creditUrl}}" target="_blank" rel="noopener nofollow">{{heroPhoto.credit}}</a>{{else}}{{heroPhoto.credit}}{{/if}}
+          </figcaption>
+          {{/if}}
+        </figure>
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="orderstrip">
+      <div class="wrap orderstrip__inner">
+        <div class="orderstrip__item">
+          <span class="orderstrip__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2.1Z"/></svg>
+          </span>
+          <div>
+            <span class="orderstrip__label">{{t.hero.stripPhoneLabel}}</span>
+            <a class="orderstrip__value" href="tel:{{business.phoneE164}}">{{business.phoneNational}}</a>
+          </div>
+        </div>
+        <div class="orderstrip__item">
+          <span class="orderstrip__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M10 21v-6h4v6"/></svg>
+          </span>
+          <div>
+            <span class="orderstrip__label">{{t.hero.stripShopLabel}}</span>
+            <a class="orderstrip__value" href="{{links.place}}" target="_blank" rel="noopener">{{business.street}}</a>
+          </div>
+        </div>
+        <div class="orderstrip__item">
+          <span class="orderstrip__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
+          </span>
+          <div>
+            <span class="orderstrip__label">{{t.hero.stripAreaLabel}}</span>
+            <span class="orderstrip__value">{{t.hero.stripAreaValue}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OCCASIONS — the first question a florist customer has is "can you do this for…" -->
+  <section class="section" id="ocasions" aria-labelledby="ocasions-title">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="eyebrow">{{t.features.eyebrow}}</p>
+        <h2 class="h2" id="ocasions-title">{{t.features.title}}</h2>
+        <p class="lead">{{t.features.lead}}</p>
+      </div>
+      <ul class="cards">
+        {{#each featureCards}}
+        <li class="card reveal">
+          <span class="card__icon" aria-hidden="true">{{{this.icon}}}</span>
+          <h3>{{this.title}}</h3>
+          <p>{{this.text}}</p>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </section>
+
+  <!-- THE SHOP — what is actually on the counter, plus who makes it -->
+  <section class="section section--ivory" id="botiga" aria-labelledby="botiga-title">
+    <div class="wrap">
+      <div class="shop__grid">
+        <div class="shop__copy reveal">
+          <p class="eyebrow">{{t.about.eyebrow}}</p>
+          <h2 class="h2" id="botiga-title">{{t.about.title}}</h2>
+          <p class="lead">{{t.about.lead}}</p>
+          <p>{{t.about.body1}}</p>
+          <p>{{t.about.body2}}</p>
+
+          <h3 class="shop__listTitle">{{t.menu.title}}</h3>
+          <p class="shop__listLead">{{t.menu.lead}}</p>
+          <dl class="shoplist">
+            {{#each dishes}}
+            <div class="shoplist__item">
+              <dt>{{this.title}}</dt>
+              <dd>{{this.text}}</dd>
+            </div>
+            {{/each}}
+          </dl>
+        </div>
+        <div class="reveal">
+          <dl class="stats">
+            <div class="stat">
+              <dt class="stat__label">{{t.about.statRatingLabel}}</dt>
+              <dd class="stat__value">
+                {{business.ratingFormatted}}
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.95-4.7 4.6 1.1 6.45L12 17.4l-5.8 3.1 1.1-6.45-4.7-4.6 6.5-.95L12 2.6Z"/></svg>
+              </dd>
+              <p class="stat__label">{{t.about.statRating}}</p>
+            </div>
+            <div class="stat">
+              <dt class="stat__label">{{t.about.statReviewsLabel}}</dt>
+              <dd class="stat__value">{{business.ratingCount}}</dd>
+              <p class="stat__label">{{t.about.statReviews}}</p>
+            </div>
+            <div class="stat">
+              <dt class="stat__label">{{t.about.statPlaceLabel}}</dt>
+              <dd class="stat__value stat__value--text">{{business.cityShort}}</dd>
+              <p class="stat__label">{{t.about.statPlace}}</p>
+            </div>
+            <div class="stat">
+              <dt class="stat__label">{{t.about.statSpecialtyLabel}}</dt>
+              <dd class="stat__value stat__value--text">{{t.about.statSpecialtyValue}}</dd>
+              <p class="stat__label">{{t.about.statSpecialty}}</p>
+            </div>
+          </dl>
+          <blockquote class="shop__pull reveal">
+            <p>“{{t.about.pull}}”</p>
+            <cite>{{t.about.pullAuthor}}</cite>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO ORDER — delivery and service area belong here, not only in the footer -->
+  <section class="section section--forest" id="comanda" aria-labelledby="comanda-title">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="eyebrow">{{t.order.eyebrow}}</p>
+        <h2 class="h2" id="comanda-title">{{t.order.title}}</h2>
+        <p class="lead">{{t.order.lead}}</p>
+      </div>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step__num" aria-hidden="true">1</span>
+          <h3>{{t.order.step1Title}}</h3>
+          <p>{{t.order.step1Text}}</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__num" aria-hidden="true">2</span>
+          <h3>{{t.order.step2Title}}</h3>
+          <p>{{t.order.step2Text}}</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__num" aria-hidden="true">3</span>
+          <h3>{{t.order.step3Title}}</h3>
+          <p>{{t.order.step3Text}}</p>
+        </li>
+      </ol>
+      <div class="delivery reveal">
+        <div class="delivery__col">
+          <h3 class="delivery__title">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
+            {{t.order.areaTitle}}
+          </h3>
+          <p>{{t.order.areaText}}</p>
+          <ul class="delivery__places">
+            {{#each t.order.areas}}<li>{{this}}</li>{{/each}}
+          </ul>
+        </div>
+        <div class="delivery__col">
+          <h3 class="delivery__title">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg>
+            {{t.order.deliveryTitle}}
+          </h3>
+          <p>{{t.order.deliveryText}}</p>
+          <a class="delivery__cta" href="tel:{{business.phoneE164}}">
+            {{t.order.deliveryCta}}
+            <strong>{{business.phoneNational}}</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section" id="ressenyes" aria-labelledby="ressenyes-title">
+    <div class="wrap">
+      <div class="reviews__head reveal">
+        <div>
+          <p class="eyebrow">{{t.reviews.eyebrow}}</p>
+          <h2 class="h2" id="ressenyes-title">{{t.reviews.title}}</h2>
+          <p class="lead">{{t.reviews.lead}}</p>
+        </div>
+        <div class="reviews__score">
+          <span class="rating__star" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.6l2.9 5.9 6.5.95-4.7 4.6 1.1 6.45L12 17.4l-5.8 3.1 1.1-6.45-4.7-4.6 6.5-.95L12 2.6Z"/></svg>
+          </span>
+          <div>
+            <b>{{business.ratingFormatted}}</b>
+            <span>{{business.ratingCount}} {{t.reviews.reviewsWord}} {{t.reviews.onGoogle}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="quotes">
+        {{#each quotes}}
+        <figure class="quote reveal">
+          <div class="quote__stars" aria-label="{{this.ratingLabel}}">
+            {{#each this.stars}}<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.95-4.7 4.6 1.1 6.45L12 17.4l-5.8 3.1 1.1-6.45-4.7-4.6 6.5-.95L12 2.6Z"/></svg>{{/each}}
+          </div>
+          <blockquote><p>{{this.text}}</p></blockquote>
+          <figcaption>
+            <span class="quote__avatar" aria-hidden="true">{{this.initial}}</span>
+            <span>
+              <strong>{{this.author}}</strong>
+              {{this.meta}}
+            </span>
+          </figcaption>
+        </figure>
+        {{/each}}
+      </div>
+      <a class="reviews__all" href="{{links.reviews}}" target="_blank" rel="noopener">
+        {{t.reviews.readAll}}
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- CALL TO ORDER — the page must end with a phone number, not a form nobody answers -->
+  <section class="section section--ivory" id="contacte" aria-labelledby="contacte-title">
+    <div class="wrap">
+      <div class="contact__grid">
+        <div class="reveal">
+          <p class="eyebrow">{{t.contact.eyebrow}}</p>
+          <h2 class="h2" id="contacte-title">{{t.contact.title}}</h2>
+          <p class="lead">{{t.contact.lead}}</p>
+
+          <a class="callcard" href="tel:{{business.phoneE164}}">
+            <span class="callcard__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2.1Z"/></svg>
+            </span>
+            <span class="callcard__body">
+              <span class="callcard__label">{{t.contact.ctaLabel}}</span>
+              <span class="callcard__number">{{business.phoneNational}}</span>
+            </span>
+            <span class="callcard__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </a>
+          <p class="contact__note">{{t.contact.callNote}}</p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <span class="contact-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <div>
+                <div class="contact-item__label">{{t.contact.addressLabel}}</div>
+                <div class="contact-item__value">
+                  <a href="{{links.directions}}" target="_blank" rel="noopener">{{business.street}}<br>{{business.postalCode}} {{business.city}}</a>
+                </div>
+                <div class="contact-item__meta">{{business.region}}, {{business.countryName}}</div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+              </span>
+              <div>
+                <div class="contact-item__label">{{t.contact.listingLabel}}</div>
+                <div class="contact-item__value"><a href="{{links.place}}" target="_blank" rel="noopener nofollow">{{t.contact.listingValue}}</a></div>
+                <div class="contact-item__meta">{{t.contact.plusCodeLabel}}: {{business.plusCode}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-shell" id="map-shell" data-map-loaded="false">
+          <div class="map-placeholder">
+            <div class="map-placeholder__inner">
+              <span class="map-placeholder__pin" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <p>{{t.contact.mapNote}}</p>
+              <button class="btn btn--primary" type="button" data-map-load>{{t.contact.mapLoad}}</button>
+            </div>
+          </div>
+          <template id="map-template">
+            <iframe title="{{t.contact.mapTitle}}" src="{{links.mapEmbed}}" width="600" height="480" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </template>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="{{meta.assetBase}}">
+          <svg class="brand__mark" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true">
+            <circle cx="20" cy="20" r="19" fill="#254734"/>
+            <g fill="#c9a227">
+              <ellipse cx="20" cy="13.6" rx="3.5" ry="5.2"/>
+              <ellipse cx="20" cy="26.4" rx="3.5" ry="5.2"/>
+              <ellipse cx="13.6" cy="20" rx="5.2" ry="3.5"/>
+              <ellipse cx="26.4" cy="20" rx="5.2" ry="3.5"/>
+            </g>
+            <circle cx="20" cy="20" r="3.4" fill="#f4c95d"/>
+            <circle cx="20" cy="20" r="1.5" fill="#254734"/>
+          </svg>
+          <span class="brand__text"><span class="brand__name">{{business.name}}</span></span>
+        </a>
+        <p>{{t.footer.tagline}}</p>
+      </div>
+      <div>
+        <h2>{{t.footer.navTitle}}</h2>
+        <ul>
+          <li><a href="#ocasions">{{t.nav.occasions}}</a></li>
+          <li><a href="#botiga">{{t.nav.shop}}</a></li>
+          <li><a href="#comanda">{{t.nav.how}}</a></li>
+          <li><a href="#ressenyes">{{t.nav.reviews}}</a></li>
+          <li><a href="#contacte">{{t.nav.contact}}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>{{t.footer.contactTitle}}</h2>
+        <ul>
+          <li><a href="tel:{{business.phoneE164}}">{{business.phoneNational}}</a></li>
+          <li><a href="{{links.directions}}" target="_blank" rel="noopener">{{business.street}}</a></li>
+          <li>{{business.postalCode}} {{business.city}}</li>
+          <li><a href="{{links.place}}" target="_blank" rel="noopener nofollow">{{t.footer.siteLink}}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>{{t.footer.legalTitle}}</h2>
+        <ul>
+          <li><a href="#contacte">{{t.nav.contact}}</a></li>
+          <li><a href="#" data-cookie-open>{{t.cookies.policy}}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <p>{{t.footer.legal}}</p>
+      <p>© <span id="year">{{year}}</span> {{business.name}}. {{t.footer.rights}}</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cookiebar" id="cookiebar" role="region" aria-label="{{t.cookies.policy}}" data-visible="false">
+  <p>{{t.cookies.text}}</p>
+  <div class="cookiebar__actions">
+    <button class="btn cookiebar__reject" type="button" data-cookie="essential">{{t.cookies.reject}}</button>
+    <button class="btn cookiebar__accept" type="button" data-cookie="accept">{{t.cookies.accept}}</button>
+  </div>
+</div>
+
+<script src="{{meta.assetBase}}assets/js/main.js" defer></script>
+</body>
+</html>

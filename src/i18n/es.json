@@ -1,0 +1,212 @@
+{
+  "meta": {
+    "title": "Lluna Plena Flors · Floristería en Vilanova i la Geltrú",
+    "description": "Floristería en la calle de l'Aigua, 38, Vilanova i la Geltrú. Ramos de temporada, decoración floral de boda, coronas de duelo y entrega a domicilio. Llamad al 938 14 26 35.",
+    "ogAlt": "Flores de temporada y ramos hechos a mano en la floristería Lluna Plena Flors de Vilanova i la Geltrú"
+  },
+  "ogLocale": "es_ES",
+  "pathPrefix": "../",
+  "countryName": "España",
+  "brand": {
+    "sub": "Floristería · Vilanova i la Geltrú"
+  },
+  "nav": {
+    "label": "Navegación principal",
+    "skip": "Ir al contenido",
+    "occasions": "Ocasiones",
+    "shop": "La tienda",
+    "how": "Cómo encargar",
+    "reviews": "Reseñas",
+    "contact": "Contacto",
+    "call": "Llamar"
+  },
+  "hero": {
+    "eyebrow": "Calle de l'Aigua, 38 · Vilanova i la Geltrú",
+    "title": "Flores frescas, atadas a mano, en el centro de Vilanova",
+    "subtitle": "Ramos de temporada, decoración de boda y coronas de duelo. Cada ramo se monta a mano con flor fresca, y os decimos qué lleva y cuánto cuesta antes de empezar.",
+    "ctaPrimary": "Llamad para encargar",
+    "ctaSecondary": "Ver para qué ocasión",
+    "proofReviews": "reseñas en Google",
+    "proofLink": "Leerlas",
+    "photoAlt": "Escaparate de Lluna Plena Flors con ramos y composiciones de flor natural",
+    "photoCredit": "Foto",
+    "stripPhoneLabel": "Encargad por teléfono",
+    "stripShopLabel": "Tienda abierta en la calle de l'Aigua",
+    "stripAreaLabel": "Reparto",
+    "stripAreaValue": "Vilanova i la Geltrú"
+  },
+  "about": {
+    "eyebrow": "La tienda",
+    "title": "Una floristería de barrio que hace bodas",
+    "lead": "Lluna Plena Flors es una tienda pequeña donde la flor se elige a mano cada semana y los encargos se hablan uno a uno. Carmen y el equipo hacen desde el ramo del martes hasta el arco entero de una ceremonia.",
+    "body1": "Trabajan con flor de temporada y con lo mejor que hay en el mercado ese día, por eso el catálogo no es una lista cerrada de productos: es una manera de trabajar. Si tenéis una idea, una foto o solo un color en la cabeza, os decimos qué se puede hacer con la flor de esta semana y cuánto costará antes de empezar.",
+    "body2": "Las bodas son buena parte del trabajo: ramos de novia, arcos, centros de mesa y toda la decoración floral de la ceremonia y del banquete. También hacen ramos de duelo y coronas, un trabajo donde manda el tiempo y que atienden el mismo día siempre que pueden.",
+    "statRatingLabel": "Valoración media",
+    "statRating": "sobre 5 en Google",
+    "statReviewsLabel": "Reseñas",
+    "statReviews": "de clientes reales",
+    "statPlaceLabel": "Dónde estamos",
+    "statPlace": "centro de la ciudad",
+    "statSpecialtyLabel": "Especialidad",
+    "statSpecialtyValue": "Bodas",
+    "statSpecialty": "decoración floral completa",
+    "pull": "Todo lo que imaginamos y más. Nos guió siempre respetando nuestro gusto.",
+    "pullAuthor": "Rocío G., decoración de boda"
+  },
+  "menu": {
+    "title": "Qué encontraréis",
+    "lead": "No trabajamos con un catálogo cerrado: esto es lo que sale de la tienda casi cada semana.",
+    "items": {
+      "bouquet": {
+        "title": "Ramo de temporada",
+        "text": "Atado a mano con la flor que hay ese día. Decid el color o el presupuesto y lo montamos."
+      },
+      "arrangement": {
+        "title": "Composición para casa",
+        "text": "Para un comedor, una consulta o un escaparate. En cesta, en jarrón o con corteza."
+      },
+      "centrepiece": {
+        "title": "Centro de mesa",
+        "text": "Para una comida, un banquete o una celebración familiar. Se monta con la flor del día y el jarrón que queráis."
+      },
+      "wedding": {
+        "title": "Ramo de novia y flores de ojal",
+        "text": "Se diseña con vosotros meses antes, a partir de fotos o de una conversación sobre colores y estilo."
+      },
+      "funeral": {
+        "title": "Corona y ramo de duelo",
+        "text": "Trabajo urgente, atendido el mismo día cuando es posible. Llamad y lo resolvemos."
+      },
+      "gift": {
+        "title": "Detalle y regalo pequeño",
+        "text": "Para un cumpleaños, una visita al hospital o un gracias, sin tener que hacer un ramo entero."
+      }
+    }
+  },
+  "order": {
+    "eyebrow": "Cómo encargar",
+    "title": "Tres pasos y lo tenéis",
+    "lead": "No hay formulario ni carrito de la compra: se habla por teléfono o se viene a la tienda, y así el ramo sale como lo queréis.",
+    "step1Title": "Llamad o pasaos",
+    "step1Text": "Nos decís la ocasión, el color y el presupuesto. Si tenéis una foto de referencia, mejor.",
+    "step2Title": "Os confirmamos flor y precio",
+    "step2Text": "Os decimos qué se puede hacer con la flor de esta semana y cerramos el precio antes de montar nada.",
+    "step3Title": "Recogéis o lo llevamos",
+    "step3Text": "Lo podéis recoger en la tienda o lo entregamos en Vilanova y en los pueblos de alrededor.",
+    "areaTitle": "Zona de reparto",
+    "areaText": "El reparto seguro es Vilanova i la Geltrú. Para los pueblos del Garraf y el Penedès no prometemos nada por adelantado: llamadnos y os decimos si podemos llegar ese día.",
+    "areas": [
+      "Vilanova i la Geltrú — el núcleo del reparto",
+      "La Geltrú",
+      "Pueblos del Garraf y el Penedès — preguntadnos"
+    ],
+    "deliveryTitle": "Entrega",
+    "deliveryText": "Los encargos se hacen por teléfono o en la tienda. Para una entrega el mismo día, llamad cuanto antes por la mañana: la flor tiene que poder montarse y salir.",
+    "deliveryCta": "Para encargar, llamad al"
+  },
+  "features": {
+    "eyebrow": "Para qué ocasión",
+    "title": "Del ramo de cada día a la boda entera",
+    "lead": "La misma tienda hace un ramo pequeño y la decoración completa de un banquete. Elegid vuestra ocasión.",
+    "items": {
+      "weddings": {
+        "title": "Bodas",
+        "text": "Ramo de novia, flores de ojal, arco, centros de mesa y toda la flor de la ceremonia y del banquete. Se diseña meses antes y se monta el mismo día."
+      },
+      "funerals": {
+        "title": "Duelo y despedidas",
+        "text": "Coronas, ramos y centros para velatorio y entierro. Es un trabajo urgente y lo atendemos el mismo día siempre que podemos."
+      },
+      "birthdays": {
+        "title": "Cumpleaños y celebraciones",
+        "text": "Ramos de cumpleaños, de felicitación y detalles para quien cumple años. Decid el color y el presupuesto y lo atamos."
+      },
+      "seasonal": {
+        "title": "Temporada y fiestas",
+        "text": "Sant Jordi, Todos los Santos, Navidad y Ramos: la tienda cambia con el calendario y con la flor que hay en el mercado."
+      },
+      "events": {
+        "title": "Eventos y empresas",
+        "text": "Inauguraciones, presentaciones, restaurantes y hoteles que quieren flor fresca cada semana."
+      },
+      "care": {
+        "title": "Consejo y cuidado",
+        "text": "Os explicamos cómo cortar el tallo, cuánta agua poner y dónde no poner el jarrón para que os dure más."
+      }
+    }
+  },
+  "reviews": {
+    "eyebrow": "Qué dicen",
+    "title": "Bodas organizadas desde fuera, y salieron bien",
+    "lead": "Buena parte de las reseñas son de parejas que encargaron la flor desde el extranjero y la vieron por primera vez el día de la boda. Estas son sus palabras.",
+    "starsLabel": "{n} de 5 estrellas",
+    "reviewsWord": "reseñas",
+    "onGoogle": "en Google",
+    "readAll": "Leer todas las reseñas en Google",
+    "items": {
+      "emma": {
+        "text": "Hicieron toda la decoración floral y los ramos de mi boda de abril de 2025. Lo organicé desde Estados Unidos y, sin haber visto ningún diseño antes, salió perfecto.",
+        "author": "Emma Oakley",
+        "meta": "Boda · hace un año",
+        "stars": 5
+      },
+      "rachel": {
+        "text": "Me hicieron la flor de la boda de abril de 2023. Lo planifiqué desde el Reino Unido y solo envié fotos de ejemplo. Vi las flores por primera vez el día de la boda y me quedé sin palabras.",
+        "author": "Rachel Esfahani",
+        "meta": "Boda · hace 3 años",
+        "stars": 5
+      },
+      "dana": {
+        "text": "Nos hicieron la flor de una boda íntima y quedó preciosa. Les envié fotos de inspiración de Pinterest y consiguieron exactamente lo que había imaginado, quizá incluso mejor. Un equipo muy amable y profesional.",
+        "author": "Dana Jones",
+        "meta": "Boda · hace 4 años",
+        "stars": 5
+      },
+      "rocio": {
+        "text": "Carmen se encargó de toda la decoración floral de mi boda, con un gusto excelente y mucho respeto por nuestra personalidad. Se desplazó a distintos lugares para llevar cada cosa donde tocaba y estuvo atenta a cada comentario durante meses.",
+        "author": "Rocío González",
+        "meta": "Boda · hace un mes",
+        "stars": 5
+      },
+      "imma": {
+        "text": "Un lugar encantador y gente muy agradable. Les confié dos composiciones florales y salí encantada.",
+        "author": "Imma Espejo",
+        "meta": "Composición floral · hace 4 meses",
+        "stars": 5
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Llamad y hablamos del ramo",
+    "lead": "Es la manera más rápida: por teléfono os decimos qué hay, cuánto cuesta y cuándo lo podéis tener. Si pasáis por la tienda, mejor todavía.",
+    "ctaLabel": "Llamad a la tienda",
+    "callNote": "Si no contestamos es que estamos montando un ramo: dejad un mensaje o volved a llamar dentro de un rato.",
+    "addressLabel": "Dirección",
+    "listingLabel": "Ficha y reseñas",
+    "listingValue": "Ver en Google Maps",
+    "plusCodeLabel": "Código Plus",
+    "mapNote": "El mapa de Google solo se carga si aceptáis las cookies.",
+    "mapLoad": "Cargar el mapa",
+    "mapTitle": "Mapa con la ubicación de Lluna Plena Flors"
+  },
+  "footer": {
+    "tagline": "Floristería en la calle de l'Aigua, 38. Ramos, bodas, duelo y planta, hechos a mano en Vilanova i la Geltrú.",
+    "navTitle": "La tienda",
+    "contactTitle": "Contacto",
+    "legalTitle": "Información",
+    "siteLink": "Ficha en Google Maps",
+    "legal": "Lluna Plena Flors, Carrer de l'Aigua, 38, 08800 Vilanova i la Geltrú (Barcelona). Las fotografías son orientativas: la flor cambia según la temporada y el mercado.",
+    "rights": "Todos los derechos reservados."
+  },
+  "cookies": {
+    "policy": "Cookies",
+    "text": "Usamos cookies propias para recordar vuestra elección y, solo si las aceptáis, cookies de Google Analytics para saber qué páginas se visitan. Podéis seguir con las esenciales.",
+    "accept": "Aceptar",
+    "reject": "Solo esenciales"
+  },
+  "a11y": {
+    "langSwitch": "Cambio de idioma",
+    "menuToggle": "Abrir o cerrar el menú"
+  }
+}
