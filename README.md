@@ -1,67 +1,84 @@
 # Lluna Plena Flors — website
 
-Static, server-rendered site for the florist Lluna Plena Flors, Carrer de l'Aigua, 38,
-08800 Vilanova i la Geltrú. Three locales: Catalan (default, at the root), Spanish at
-`/es/`, English at `/en/`.
+Static site for **Lluna Plena Flors**, a florist at Carrer de l'Aigua, 38, Vilanova i la Geltrú.
 
-Served at <https://llunaplenaflors.vilanovailageltru.info/>.
+Three languages, server-rendered HTML per locale, plain CSS and one small
+progressive-enhancement script. No framework, no runtime dependencies.
 
-## Build
+## Live site
 
-```bash
-ln -sfn /home/davidoc/.openclaw/workspace/node_modules node_modules
-node scripts/build.mjs     # emits index.html, es/index.html, en/index.html, sitemap, robots
-node scripts/verify.mjs    # headless checks over a throwaway local server
-node scripts/assets.mjs    # og-image.jpg, icon PNGs from the default dictionary
-node scripts/brand.mjs     # favicon.svg + icon PNGs in the shop's own mark (run after assets.mjs)
-node scripts/card.mjs      # assets/photos/handover.png, 10.5 x 14.5 cm at 300 dpi with the QR
-```
-
-`build.mjs` fails on an unresolved `{{hole}}`, an empty `href`/`src`, or a JSON-LD block
-that does not parse. `verify.mjs` starts its own static server on a random port and checks
-per locale in a fresh browser context.
-
-## Structure
-
-```
-src/data.json             business facts (address, coordinates, phone, rating, reviews)
-src/locales.json          locale list: code, name, dir, default, hreflang
-src/i18n/<code>.json      copy per locale
-src/template.html         the page, one template for all three locales
-assets/css/styles.css     styles; palette and typography tokens live in :root
-assets/js/main.js         progressive enhancement only (nav, reveal, consent, map)
-assets/fonts/             self-hosted Fraunces + Inter (woff2, latin and latin-ext)
-assets/img/               hero photo, OG image, icons
-assets/photos/            handover card and the source photo
-scripts/                  build, verify, asset and card generators
-```
-
-Every asset path is relative so the site also works from an S3 prefix.
+- **Catalan (default):** <https://llunaplenaflors.vilanovailageltru.info/>
+- **Spanish:** <https://llunaplenaflors.vilanovailageltru.info/es/>
+- **English:** <https://llunaplenaflors.vilanovailageltru.info/en/>
 
 ## Page structure
 
-1. Top bar (address, language switch) and sticky header with a call button.
-2. Hero: headline, phone-first call to action, rating proof, the shop photo, and an
-   order strip (phone, address, delivery area).
-3. Occasions — weddings, funerals, birthdays, season, events and businesses, care advice.
-4. The shop — who makes the flowers, what leaves the counter each week, key figures.
-5. How to order — three steps plus delivery area and same-day cut-off.
-6. Reviews, drawn from the Google listing.
-7. Contact — a large call card, address, listing link, and a map that waits for consent.
+Top bar with the address and language switch, sticky header with the shop mark and a
+permanent call button. A product-led hero with the phone as the primary action, then an order
+strip (phone, address, delivery area), the occasions the shop covers, the shop itself with what
+leaves the counter each week, how to order in three steps with the delivery area and same-day
+cut-off, reviews, and a large tap-to-call contact block with the consent-gated map.
 
-## Notes
+## Repo layout
 
-- Canonical, `og:url`, hreflang, `sitemap.xml`, the OG image URL and the handover QR are all
-  derived from `slug` + `siteDomain` in `src/data.json`. Nothing hardcodes a host.
-- The phone number is a landline, so the site uses `tel:` links only and shows no WhatsApp
-  action.
-- Opening hours and price-per-person are deliberately not published.
-- The review count is shown because it is above 50; the rating badge appears because it is
-  above 4.
-- The map loads only after cookie consent. Analytics uses the same decision: nothing is
-  requested from Google before acceptance, and `window.__analyticsConsent(ok)` is the single
-  switch.
-- The hero photo is the shop's own Google listing photo, credited in the caption.
-- `verify.mjs` is the gate: it asserts the layout tokens resolve (a `0px` `.wrap` padding
-  means `:root` was overwritten wholesale), no horizontal overflow at 360/768/1920, the
-  drawer opens and closes on Escape, and the map appears only after consent.
+```
+index.html                 Catalan (default locale)
+es/index.html              Spanish
+en/index.html              English
+ca/index.html              redirect to / (the default locale used to live here)
+src/template.html          the single template the build renders
+src/data.json              business data (address, phone, coordinates, rating)
+src/locales.json           locale list, which one is default, hreflang codes
+src/i18n/{ca,es,en}.json   all copy, per locale
+scripts/build.mjs          renders the locale pages + sitemap, robots, manifest
+scripts/assets.mjs         app icons and the Open Graph image
+scripts/card.mjs           handover card, 10.5 x 14.5 cm @ 300 dpi
+scripts/verify.mjs         headless checks against the built output
+assets/css/styles.css      all styles, responsive from 320 px up
+assets/js/main.js          navigation, reveal, cookie consent, lazy map
+assets/fonts/              self-hosted Fraunces and Inter (woff2 subsets)
+assets/img/                mark, icons, hero photo, OG image
+assets/photos/handover.png handover card with a QR to the live site
+.github/workflows/         deploy to S3 on push to main
+```
+
+## Build
+
+Requires Node 20+ and `puppeteer` for the asset scripts.
+
+```bash
+node scripts/build.mjs     # render the locale pages
+node scripts/assets.mjs    # regenerate icons and og-image.jpg
+node scripts/card.mjs      # regenerate the handover card
+node scripts/verify.mjs    # headless verification of the built output
+```
+
+`build.mjs` fails on an unresolved template placeholder, an empty `href`/`src`, invalid
+JSON-LD, or a feature icon that has no entry in `scripts/icons.json`.
+
+## Editing content
+
+Text lives in `src/i18n/*.json`; shared business facts live in `src/data.json`. Change those,
+run `node scripts/build.mjs`, commit the regenerated HTML. Do not hand-edit the generated
+`index.html` files — they are overwritten.
+
+## Deploy
+
+Pushing to `main` runs `.github/workflows/deploy-aws.yml`: it builds the site, authenticates
+to AWS with OIDC (no stored keys) and uploads to
+`s3://dr-static-websites/vilanovailageltru.info/llunaplenaflors/`. The subdomain is served from the bucket's CDN, so a
+deploy is live within a few minutes.
+
+## Technical notes
+
+- **SEO** — per-locale `<title>`, description, canonical, reciprocal `hreflang` including
+  `x-default`, Open Graph and Twitter cards, `sitemap.xml` with alternates, `robots.txt`, and
+  `Florist` structured data. Every absolute URL derives from the site's own domain.
+- **Accessibility** — one `h1` per page, skip link, landmark elements, visible focus rings,
+  body text at or above 4.5:1 contrast, `aria-expanded` on the navigation toggle, Escape
+  closes the drawer, and content stays readable with JavaScript disabled.
+- **Performance** — self-hosted woff2 subsets preloaded, one CSS file, one deferred JS file,
+  no third-party requests until the visitor opts in.
+- **Privacy** — the cookie notice offers accept and reject. Nothing is fetched from Google —
+  analytics script or map iframe — until the visitor accepts; rejecting loads neither and is
+  remembered.
