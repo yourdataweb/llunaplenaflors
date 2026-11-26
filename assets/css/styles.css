@@ -1141,12 +1141,12 @@ a.orderstrip__value:hover { color: var(--gold-500); }
 .cookiebar__reject:hover { background: var(--ivory-100); }
 
 /* ---------- reveal on scroll ---------- */
-.reveal {
+.js .reveal {
   opacity: 0;
   transform: translateY(18px);
   transition: opacity .6s ease, transform .6s cubic-bezier(.22, 1, .36, 1);
 }
-.reveal.is-visible {
+.js .reveal.is-visible {
   opacity: 1;
   transform: none;
 }
