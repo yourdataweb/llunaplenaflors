@@ -24,6 +24,11 @@ const BRAND = biz.name;
 const SITE_DOMAIN = biz.siteDomain || "vilanovailageltru.info";
 const SITE_URL = (biz.siteUrl || `https://${biz.slug}.${SITE_DOMAIN}`).replace(/\/?$/, "/");
 const LINE = "Ja tens pàgina web:";
+/* Card ink follows the same optional palette keys assets.mjs already reads, so the
+   handover card matches the site instead of always fading to the default dark teal. */
+const DEEP = biz.deep || "#06202a";
+const GOLD = biz.gold || "#d9a02c";
+const LIGHT = biz.light || "#8fc4cf";
 const CM_W = 10.5;
 const CM_H = 14.5;
 const DPI = 300;
@@ -64,7 +69,7 @@ writeFileSync(join(TMP, "tablet-top.png"), Buffer.from(shot, "base64"));
 
 const qrDataUrl = await QRCode.toDataURL(SITE_URL, {
   errorCorrectionLevel: "M", margin: 1, width: 520,
-  color: { dark: "#06202a", light: "#ffffff" },
+  color: { dark: DEEP, light: "#ffffff" },
 });
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -74,15 +79,15 @@ await cardPage.setViewport({ width: W, height: H, deviceScaleFactor: 1 });
 await cardPage.setContent(
   `<!DOCTYPE html><html><head><meta charset="utf-8"><style>
   *{box-sizing:border-box;margin:0;padding:0}
-  html,body{width:${W}px;height:${H}px;background:#06202a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  html,body{width:${W}px;height:${H}px;background:${DEEP};font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
   .card{position:relative;width:${W}px;height:${H}px;overflow:hidden}
   .shot{position:absolute;inset:0;width:${W}px;height:${H}px;object-fit:cover;object-position:top center}
-  .fade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,32,42,0) 52%,rgba(6,32,42,.55) 68%,rgba(6,32,42,.92) 82%,#06202a 93%)}
+  .fade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0) 52%,rgba(0,0,0,.45) 68%,rgba(0,0,0,.82) 82%,${DEEP} 93%)}
   .overlay{position:absolute;left:0;right:0;bottom:0;padding:0 ${Math.round(64 * scale)}px ${Math.round(60 * scale)}px;display:flex;align-items:flex-end;gap:${Math.round(40 * scale)}px}
   .copy{flex:1 1 auto;padding-bottom:14px;min-width:0}
-  .kicker{font-weight:600;font-size:${Math.round(17 * scale)}px;letter-spacing:.2em;text-transform:uppercase;color:#d9a02c;margin-bottom:${Math.round(18 * scale)}px}
+  .kicker{font-weight:600;font-size:${Math.round(17 * scale)}px;letter-spacing:.2em;text-transform:uppercase;color:${GOLD};margin-bottom:${Math.round(18 * scale)}px}
   .line{font-weight:600;font-size:${Math.round(40 * scale)}px;line-height:1.16;letter-spacing:-.02em;color:#fdfaf4}
-  .url{margin-top:${Math.round(16 * scale)}px;font-weight:600;font-size:${Math.round(20 * scale)}px;line-height:1.35;color:#8fc4cf;word-break:break-all}
+  .url{margin-top:${Math.round(16 * scale)}px;font-weight:600;font-size:${Math.round(20 * scale)}px;line-height:1.35;color:${LIGHT};word-break:break-all}
   .qr{flex:none;background:#fff;border-radius:${Math.round(22 * scale)}px;padding:${Math.round(16 * scale)}px}
   .qr img{display:block;width:${Math.round(272 * scale)}px;height:${Math.round(272 * scale)}px}
   </style></head><body>
