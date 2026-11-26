@@ -84,6 +84,27 @@ for (const l of LANGS) {
       }).length,
       langLinks: [...document.querySelectorAll(".langs__link")].map((a) => a.getAttribute("href")),
       quotes: document.querySelectorAll(".quote").length,
+      /* Sections whose class names describe this business, not a generic template. */
+      sectionNames: (function () {
+        var names = [];
+        document.querySelectorAll("main section").forEach(function (el) {
+          Array.prototype.forEach.call(el.classList, function (c) {
+            if (c !== "section" && !/^section--/.test(c)) names.push(c);
+          });
+        });
+        return names;
+      })(),
+      namedSections: (function () {
+        var n = 0;
+        document.querySelectorAll("main section").forEach(function (el) {
+          var named = Array.prototype.some.call(el.classList, function (c) {
+            return c !== "section" && !/^section--/.test(c);
+          });
+          if (named) n++;
+        });
+        return n;
+      })(),
+      totalSections: document.querySelectorAll("main section").length,
       wrapPaddingLeft: parseFloat(getComputedStyle(document.querySelector(".wrap")).paddingLeft) || 0,
       wrapMaxWidth: getComputedStyle(document.querySelector(".wrap")).maxWidth,
       /* Flat values, not an IIFE returning an object: an IIFE here serialises as an empty
@@ -121,6 +142,11 @@ for (const l of LANGS) {
     `[${l.code}] map embed src with place coordinates`);
   ok(info.mapIframes === 0, `[${l.code}] map not loaded before consent`, String(info.mapIframes));
   ok(info.cookieBar, `[${l.code}] cookie notice present`);
+  // Structure check: a page whose body sections are all anonymous "section" blocks is a
+  // recoloured template, not a page designed for this business. Each section should carry a
+  // name that describes it.
+  ok(info.namedSections >= 3, `[${l.code}] body sections are named for this business`,
+    `named=${info.namedSections} of ${info.totalSections} — ${info.sectionNames.join(", ")}`);
   // Layout guard: a missing --pad/--wrap token renders content flush to the viewport
   // edge, which looks broken but passes every content assertion.
   ok(info.wrapPaddingLeft >= 8, `[${l.code}] page content has side padding`,
@@ -131,6 +157,24 @@ for (const l of LANGS) {
   ok(info.emptyLinks === 0, `[${l.code}] no empty href`, String(info.emptyLinks));
   ok(info.quotes === Object.keys(JSON.parse(readFileSync(join(ROOT, `src/i18n/${l.code}.json`), "utf8")).reviews.items).length,
     `[${l.code}] testimonial count matches dictionary`);
+
+  // Feature cards fall back to one generic glyph when a dictionary key has no icon in
+  // scripts/icons.json. Identical icons across cards read as a copy-paste mistake, so
+  // assert every card in the visible grid has its own mark.
+  const dictForIcons = JSON.parse(readFileSync(join(ROOT, `src/i18n/${l.code}.json`), "utf8"));
+  const featureKeys = Object.keys(dictForIcons.features?.items || {});
+  const distinctIcons = await page.evaluate(() => {
+    const marks = [...document.querySelectorAll(".card .card__icon")].map((n) => n.innerHTML.trim());
+    return { total: marks.length, distinct: new Set(marks).size };
+  });
+  if (featureKeys.length && distinctIcons.total) {
+    ok(distinctIcons.total === featureKeys.length,
+      `[${l.code}] one feature card per dictionary key`,
+      `${distinctIcons.total} cards vs ${featureKeys.length} keys`);
+    ok(distinctIcons.distinct === distinctIcons.total,
+      `[${l.code}] each feature card has a distinct icon`,
+      `${distinctIcons.distinct} distinct of ${distinctIcons.total}`);
+  }
 
   // Review count rule: published only above 50, and it appears in the hero badge, the
   // stats block and the reviews header — assert the number is absent from all of them.
